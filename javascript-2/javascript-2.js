@@ -104,7 +104,7 @@ console.log (saleProducts)
 
 //CODE HERE
 
-let blueProducts = products.filter((el, index, arr) => {
+const blueProducts = saleProducts.filter((element, index, arr) => {
   if (arr[index].color.includes('blue')) {
     return arr[index]
   }
@@ -122,12 +122,12 @@ console.log(blueProducts)
 //CODE HERE
 
 let orderTotal = blueProducts.reduce((acc, element, index, arr) => {
-  console.log(acc)
+  // console.log(acc)
   return acc + arr[index].price
   
 }, 0)
 
-console.log(orderTotal)
+// console.log(orderTotal)
 //////////////////////////////////PROBLEMS 5-8//////////////////////////////////
 /*
   For these problems we will be using the objects below, contactInfo and shippingInfo,
@@ -300,7 +300,7 @@ const person = {
   age: 4,
   jobs: ['fetching', 'running', 'snuggling'],
   birthday: function() {
-    return this.age + 1
+    return this.age += 1
   },
   favorites: {
       color: 'grey',
