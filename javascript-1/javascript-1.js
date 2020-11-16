@@ -267,7 +267,7 @@ const fido = new Dog('Fido', 3, 'Jack Russell', ['sit', 'shake'])
 
 //CODE HERE
 
-const bark = () => {return this.name + ' says bark!'}
+function bark () {return `${this.name} says bark!` }
 
 /*
     Invoke the call method on bark, passing in fido as the context
@@ -276,8 +276,9 @@ const bark = () => {return this.name + ' says bark!'}
 
 //CODE HERE
 
-const fidoSpeak = bark.call(this.name)
-  
+const fidoSpeak = bark.call(fido)
+
+
 ////////////////////PROBLEM 13////////////////////
 /*
     Write a function called 'teachTrick' that will take in one parameter, trick, 
@@ -291,7 +292,7 @@ const fidoSpeak = bark.call(this.name)
 
 function teachTrick (trick) {
     this.tricks.push(trick)
-    
+    // console.log(this.tricks)
     return this.tricks
 }
 
@@ -302,10 +303,10 @@ function teachTrick (trick) {
 */
 
 //CODE HERE
-  
+
 const teachStay = teachTrick.bind(fido, 'stay')
 
-console.log(teachStay())
+// console.log(teachStay)
 
 ////////////////////PROBLEM 14////////////////////
 /*
@@ -329,9 +330,7 @@ function dogIntro(treat, toy) {
 
 //CODE HERE
 
-dogIntro.apply(fido)
-
-const fidoIntro = dogIntro('chicken', 'tennis ball')
+const fidoIntro = dogIntro.apply(fido, ['chicken', 'tennis ball'])
 
 ////////////////////PROBLEM 15////////////////////
 /*
@@ -359,6 +358,7 @@ function Phone(brand, model, storage, color, sold) {
     - model, string
     - storage, number
     - color, string
+
     - sold, this should be false for each phone
 */
 
